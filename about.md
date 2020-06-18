@@ -4,11 +4,8 @@ title: About
 permalink: /about/
 ---
 
-I make beats, build neural networks
+I make beats and build neural networks
 
-### More Information
-
-I live in Canada!
 
 ### Contact me
 
