@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I make beats and build neural networks
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+I live in Canada!
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[cole.slatt@gmail.com](mailto:email@domain.com)
