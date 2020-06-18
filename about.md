@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I make beats and build neural networks
+I make beats, build neural networks
 
 ### More Information
 
@@ -12,4 +12,4 @@ I live in Canada!
 
 ### Contact me
 
-[cole.slatt@gmail.com](mailto:email@domain.com)
+[cole.slatt@gmail.com](mailto:cole.slatt@gmail.com)
