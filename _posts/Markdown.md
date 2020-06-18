@@ -1,0 +1,100 @@
+```python
+import pandas as pd
+import numpy as np
+import os
+
+from tensorflow.keras.models import Sequential, load_model
+from tensorflow.keras.layers import (Dense, 
+                                     Conv2D, 
+                                     MaxPooling1D, 
+                                     MaxPooling2D, 
+                                     Flatten, 
+                                     Dense, 
+                                     Dropout,
+                                     Conv1D, 
+                                     Activation, 
+                                     BatchNormalization, 
+                                     AveragePooling1D,
+                                     MaxPool1D,
+                                     GlobalMaxPool2D,
+                                     LSTM,
+                                     Bidirectional
+                                    )
+```
+
+I'm going to start building a neural network!
+
+
+```python
+model = Sequential()
+
+model.add(Conv2D(32,(3,3),activation = 'relu', input_shape=(1000,50,1)))
+model.add(BatchNormalization())
+model.add(MaxPooling2D(2,2))
+model.add(Dropout(0.1))
+model.add(Conv2D(64,(3,8),activation = 'relu'))
+model.add(BatchNormalization())
+model.add(MaxPooling2D((2,2), padding = 'same'))
+model.add(Conv2D(128,(2),activation = 'relu'))
+model.add(BatchNormalization())
+model.add(MaxPooling2D((2,2), padding = 'same'))
+model.add(Dropout(0.2))
+model.add(Flatten())
+model.add(Dense(16))
+model.add(BatchNormalization())
+model.add(Dropout(0.25))
+model.add(Activation('relu'))
+model.add(Dense(7, activation='softmax'))
+model.summary() 
+```
+
+    Model: "sequential"
+    _________________________________________________________________
+    Layer (type)                 Output Shape              Param #   
+    =================================================================
+    conv2d (Conv2D)              (None, 998, 48, 32)       320       
+    _________________________________________________________________
+    batch_normalization (BatchNo (None, 998, 48, 32)       128       
+    _________________________________________________________________
+    max_pooling2d (MaxPooling2D) (None, 499, 24, 32)       0         
+    _________________________________________________________________
+    dropout (Dropout)            (None, 499, 24, 32)       0         
+    _________________________________________________________________
+    conv2d_1 (Conv2D)            (None, 497, 17, 64)       49216     
+    _________________________________________________________________
+    batch_normalization_1 (Batch (None, 497, 17, 64)       256       
+    _________________________________________________________________
+    max_pooling2d_1 (MaxPooling2 (None, 249, 9, 64)        0         
+    _________________________________________________________________
+    conv2d_2 (Conv2D)            (None, 248, 8, 128)       32896     
+    _________________________________________________________________
+    batch_normalization_2 (Batch (None, 248, 8, 128)       512       
+    _________________________________________________________________
+    max_pooling2d_2 (MaxPooling2 (None, 124, 4, 128)       0         
+    _________________________________________________________________
+    dropout_1 (Dropout)          (None, 124, 4, 128)       0         
+    _________________________________________________________________
+    flatten (Flatten)            (None, 63488)             0         
+    _________________________________________________________________
+    dense (Dense)                (None, 16)                1015824   
+    _________________________________________________________________
+    batch_normalization_3 (Batch (None, 16)                64        
+    _________________________________________________________________
+    dropout_2 (Dropout)          (None, 16)                0         
+    _________________________________________________________________
+    activation (Activation)      (None, 16)                0         
+    _________________________________________________________________
+    dense_1 (Dense)              (None, 7)                 119       
+    =================================================================
+    Total params: 1,099,335
+    Trainable params: 1,098,855
+    Non-trainable params: 480
+    _________________________________________________________________
+
+
+Cool we did it!
+
+
+```python
+
+```
